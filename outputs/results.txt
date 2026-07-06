@@ -1,0 +1,54 @@
+Project 3 Results
+=================
+
+========== Section 1: Interpolation ==========
+Lagrange polynomial:
+P(x) = 7*x**5/40 - 71*x**4/24 + 147*x**3/8 - 1249*x**2/24 + 1369*x/20 - 31
+
+Natural cubic spline pieces:
+For 1 <= x <= 2:  S(x) = -39*x**3/209 + 117*x**2/209 + 340*x/209 - 1
+For 2 <= x <= 3:  S(x) = 195*x**3/209 - 117*x**2/19 + 3148*x/209 - 2081/209
+For 3 <= x <= 4:  S(x) = -28*x**3/11 + 5256*x**2/209 - 16481*x/209 + 17548/209
+For 4 <= x <= 5:  S(x) = 470*x**3/209 - 6768*x**2/209 + 31615*x/209 - 46580/209
+For 5 <= x <= 6:  S(x) = -94*x**3/209 + 1692*x**2/209 - 10685*x/209 + 23920/209
+Interpolation chart saved: C:\Users\Administrator\PycharmProjects\PythonProject22\Project3\outputs\charts\interpolation_lagrange_spline.png
+
+========== Section 2: Excel Reading and Charts ==========
+Data read from Excel:
+Run time for different data size  Alg.1  Alg.2  Alg.3
+                           100KB     50    200    100
+                           200KB     55    220    200
+                           300KB     60    240    300
+                           400KB     65    260    400
+                           500KB     70    280    500
+                           600KB     75    300    600
+Bar chart saved: C:\Users\Administrator\PycharmProjects\PythonProject22\Project3\outputs\charts\bar_chart.png
+Line chart saved: C:\Users\Administrator\PycharmProjects\PythonProject22\Project3\outputs\charts\line_chart.png
+Box plot saved: C:\Users\Administrator\PycharmProjects\PythonProject22\Project3\outputs\charts\box_plot.png
+Mean execution time of Alg.2 for 100KB to 600KB = 250.0
+
+Chart analysis:
+Alg.1 has the lowest execution time and grows slowly as data size increases.
+Alg.2 has a medium execution time and shows a steady increasing trend.
+Alg.3 has the highest growth rate and becomes much slower for larger input sizes.
+
+========== Section 3: Numerical Integration ==========
+Integral of f(x)=exp(x^2) on [0,1]
+Trapezoidal rule, n=1000: 1.462652198954
+Simpson rule, n=1000:     1.462651745907
+Gaussian quadrature, 5 points:  1.462651668019
+Gaussian quadrature, 10 points: 1.462651745907
+Reference value: 1.462651745907
+
+Absolute errors compared with reference value:
+Trapezoidal error: 4.530468948882e-07
+Simpson error:     3.008704396734e-13
+Gaussian 5 error:  7.788850031609e-08
+Gaussian 10 error: 1.332267629550e-15
+
+Integration analysis:
+The trapezoidal rule is simple, but its accuracy is lower than Simpson's rule.
+Simpson's rule gives a much more accurate result for the same interval.
+Gaussian quadrature reaches a very accurate answer with only a small number of points.
+
+All outputs were saved in the outputs folder.
